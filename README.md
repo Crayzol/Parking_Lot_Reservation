@@ -1,7 +1,6 @@
 # Parking_Lot_Resevation
 Simple system for parking with space reservation in .NET 5
 
-
 TO-DO
   1. Create database (sqlite)
   2. Create basic code structure
