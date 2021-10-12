@@ -1,4 +1,4 @@
-# Parking_Lot_Resevation
+# Parking_Lot_Reservation
 Simple system for parking with space reservation in .NET 5
 
 TO-DO
