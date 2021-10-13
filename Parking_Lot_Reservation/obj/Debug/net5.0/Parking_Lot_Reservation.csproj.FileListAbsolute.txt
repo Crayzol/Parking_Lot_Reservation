@@ -1,0 +1,9 @@
+C:\Users\Crayzol\source\repos\Parking_Lot_Reservation\Parking_Lot_Reservation\obj\Debug\net5.0\Parking_Lot_Reservation.csproj.AssemblyReference.cache
+C:\Users\Crayzol\source\repos\Parking_Lot_Reservation\Parking_Lot_Reservation\obj\Debug\net5.0\Parking_Lot_Reservation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Crayzol\source\repos\Parking_Lot_Reservation\Parking_Lot_Reservation\obj\Debug\net5.0\Parking_Lot_Reservation.AssemblyInfoInputs.cache
+C:\Users\Crayzol\source\repos\Parking_Lot_Reservation\Parking_Lot_Reservation\obj\Debug\net5.0\Parking_Lot_Reservation.AssemblyInfo.cs
+C:\Users\Crayzol\source\repos\Parking_Lot_Reservation\Parking_Lot_Reservation\obj\Debug\net5.0\Parking_Lot_Reservation.csproj.CoreCompileInputs.cache
+C:\Users\Crayzol\source\repos\Parking_Lot_Reservation\Parking_Lot_Reservation\obj\Debug\net5.0\Parking_Lot_Reservation.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Crayzol\source\repos\Parking_Lot_Reservation\Parking_Lot_Reservation\obj\Debug\net5.0\Parking_Lot_Reservation.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Crayzol\source\repos\Parking_Lot_Reservation\Parking_Lot_Reservation\obj\Debug\net5.0\Parking_Lot_Reservation.RazorAssemblyInfo.cache
+C:\Users\Crayzol\source\repos\Parking_Lot_Reservation\Parking_Lot_Reservation\obj\Debug\net5.0\Parking_Lot_Reservation.RazorAssemblyInfo.cs
