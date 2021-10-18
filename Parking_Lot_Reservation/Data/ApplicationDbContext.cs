@@ -13,7 +13,7 @@ namespace Parking_Lot_Reservation.Data
         {
 
         }
-        public DbSet<PersonModel> Persons { get; set; }
+        public DbSet<PersonModel> People { get; set; }
         public DbSet<ParkingSpaceModel> ParkingSpaces { get; set; }
     }
 }

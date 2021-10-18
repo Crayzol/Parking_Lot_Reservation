@@ -8,6 +8,6 @@ namespace Parking_Lot_Reservation.Models
     public class ParkingSpaceModel
     {
         public int ParkingSpaceID { get; set; }
-        public bool Reserved { get; set; }
+        public bool IsReserved { get; set; }
     }
 }
