@@ -14,7 +14,7 @@ namespace Parking_Lot_Reservation.Models
         public string Name { get; set; }
         public string Surname { get; set; }
 
-        [ForeignKey("ParkingSpaceModel")]
-        public ParkingSpaceModel ParkingSpaceId { get; set; }
+        [ForeignKey("ParkingSpaceId")]
+        public virtual ParkingSpaceModel ParkingSpace { get; set; }
     }
 }

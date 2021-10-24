@@ -11,6 +11,6 @@ namespace Parking_Lot_Reservation.Models
         [Key]
         public int ParkingSpaceId { get; set; }
         public bool IsReserved { get; set; }
-        public bool IsCharger { get; set; }
+        public bool HasCharger { get; set; }
     }
 }

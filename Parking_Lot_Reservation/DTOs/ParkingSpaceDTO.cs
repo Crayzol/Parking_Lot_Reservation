@@ -8,5 +8,6 @@ namespace Parking_Lot_Reservation.DTOs
     public class ParkingSpaceDTO
     {
         public bool IsReserved { get; set; }
+        public bool HasCharger { get; set; }
     }
 }
