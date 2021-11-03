@@ -22,18 +22,19 @@ namespace Parking_Lot_Reservation.Controllers
         }
 
         [HttpPost("addParkingSpace")]
-        public async Task<ActionResult<ParkingSpaceDTO>> Add([FromBody] ParkingSpaceDTO ParkingSpaceDTO)
+        public async Task<ActionResult<ParkingSpaceModel>> Add([FromBody] ParkingSpaceDTO parkingSpaceDTO)
         {
 
             var parkingSpaceAdd = new ParkingSpaceModel
             {
-                IsReserved = ParkingSpaceDTO.IsReserved,
-                HasCharger = ParkingSpaceDTO.HasCharger
+                IsReserved = parkingSpaceDTO.IsReserved,
+                HasCharger = parkingSpaceDTO.HasCharger
             };
-            await _dbContext.ParkingSpaces.AddAsync(parkingSpaceAdd);
-            await _dbContext.SaveChangesAsync();
 
-            return ParkingSpaceDTO;
+            _ = await _dbContext.ParkingSpaces.AddAsync(parkingSpaceAdd);
+            _ = await _dbContext.SaveChangesAsync();
+
+            return parkingSpaceAdd;
         }
 
         [HttpGet("getParkingSpaces")]

@@ -34,8 +34,9 @@ namespace Parking_Lot_Reservation.Controllers
                 Name = personDTO.Name,
                 Surname = personDTO.Surname
             };
-            await _dbContext.People.AddAsync(personAdd);
-            await _dbContext.SaveChangesAsync();
+
+            _ = await _dbContext.People.AddAsync(personAdd);
+            _ = await _dbContext.SaveChangesAsync();
 
             return personDTO;
         }
