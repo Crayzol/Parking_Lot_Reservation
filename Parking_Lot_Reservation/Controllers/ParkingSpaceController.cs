@@ -55,14 +55,19 @@ namespace Parking_Lot_Reservation.Controllers
         [HttpDelete("removeParkingSpace")]
         public async Task<ActionResult<ParkingSpaceDTO>> Remove(int id)
         {
-            var parkingSpace = await _dbContext.ParkingSpaces.FindAsync(id);
+            if (id < 0)
+            {
+                return new BadRequestResult();
+            }
+
+            var parkingSpace = await _dbContext.ParkingSpaces.FirstOrDefaultAsync(parking => parking.ParkingSpaceId.Equals(id));
 
             if (parkingSpace is null)
             {
                 return new BadRequestResult();
             }
 
-            _ = _dbContext.ParkingSpaces.Remove(parkingSpace);
+            _ =_dbContext.ParkingSpaces.Remove(parkingSpace);
             _ = await _dbContext.SaveChangesAsync();
 
             return new ParkingSpaceDTO { HasCharger = parkingSpace.HasCharger, IsReserved = parkingSpace.IsReserved };
