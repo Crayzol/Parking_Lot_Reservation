@@ -28,14 +28,11 @@ namespace Parking_Lot_Reservation.Controllers
             var parkingSpaceAdd = new ParkingSpaceModel
             {
                 IsReserved = parkingSpaceDTO.IsReserved,
-                HasCharger = parkingSpaceDTO.HasCharger,
+                HasCharger = parkingSpaceDTO.HasCharger
             };
 
-            if (ModelState.IsValid)
-            {
-                _ = await _dbContext.ParkingSpaces.AddAsync(parkingSpaceAdd);
-                _ = await _dbContext.SaveChangesAsync();
-            }
+            _ = await _dbContext.ParkingSpaces.AddAsync(parkingSpaceAdd);
+            _ = await _dbContext.SaveChangesAsync();
 
             return parkingSpaceAdd;
         }
@@ -58,22 +55,17 @@ namespace Parking_Lot_Reservation.Controllers
         [HttpDelete("removeParkingSpace")]
         public async Task<ActionResult<ParkingSpaceDTO>> Remove(int id)
         {
-            if (id < 0)
-            {
-                return new BadRequestObjectResult("Id is incorrect");
-            }
-
-            var parkingSpace = await _dbContext.ParkingSpaces.FirstOrDefaultAsync(parking => parking.ParkingId.Equals(id));
+            var parkingSpace = await _dbContext.ParkingSpaces.FindAsync(id);
 
             if (parkingSpace is null)
             {
-                return new BadRequestObjectResult("Parking space is null");
+                return new BadRequestResult();
             }
 
-            _ =_dbContext.ParkingSpaces.Remove(parkingSpace);
+            _ = _dbContext.ParkingSpaces.Remove(parkingSpace);
             _ = await _dbContext.SaveChangesAsync();
 
-            return new OkResult();
+            return new ParkingSpaceDTO { HasCharger = parkingSpace.HasCharger, IsReserved = parkingSpace.IsReserved };
         }
     }
 }

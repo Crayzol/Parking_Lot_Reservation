@@ -125,7 +125,6 @@ ClientBin/
 ~$*
 *~
 *.dbmdl
-*.db
 *.[Pp]ublish.xml
 *.pfx
 *.publishsettings
