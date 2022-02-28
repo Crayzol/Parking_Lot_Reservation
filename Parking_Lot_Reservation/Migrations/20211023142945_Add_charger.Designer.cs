@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Parking_Lot_Reservation.Data;
 
 namespace Parking_Lot_Reservation.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211023142945_Add_charger")]
+    partial class Add_charger
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +24,7 @@ namespace Parking_Lot_Reservation.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("HasCharger")
+                    b.Property<bool>("IsCharger")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("IsReserved")
@@ -42,7 +44,7 @@ namespace Parking_Lot_Reservation.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("ParkingSpaceId")
+                    b.Property<int?>("ParkingSpaceModel")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Surname")
@@ -50,18 +52,18 @@ namespace Parking_Lot_Reservation.Migrations
 
                     b.HasKey("PersonId");
 
-                    b.HasIndex("ParkingSpaceId");
+                    b.HasIndex("ParkingSpaceModel");
 
                     b.ToTable("People");
                 });
 
             modelBuilder.Entity("Parking_Lot_Reservation.Models.PersonModel", b =>
                 {
-                    b.HasOne("Parking_Lot_Reservation.Models.ParkingSpaceModel", "ParkingSpace")
+                    b.HasOne("Parking_Lot_Reservation.Models.ParkingSpaceModel", "ParkingSpaceId")
                         .WithMany()
-                        .HasForeignKey("ParkingSpaceId");
+                        .HasForeignKey("ParkingSpaceModel");
 
-                    b.Navigation("ParkingSpace");
+                    b.Navigation("ParkingSpaceId");
                 });
 #pragma warning restore 612, 618
         }

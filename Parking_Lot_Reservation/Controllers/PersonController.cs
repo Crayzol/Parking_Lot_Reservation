@@ -26,7 +26,7 @@ namespace Parking_Lot_Reservation.Controllers
         {
             if (string.IsNullOrEmpty(personDTO.Name) || string.IsNullOrEmpty(personDTO.Surname))
             {
-                return new BadRequestObjectResult("Id is or surname is null or empty");
+                return new BadRequestResult();
             }
 
             var personAdd = new PersonModel
@@ -63,21 +63,13 @@ namespace Parking_Lot_Reservation.Controllers
 
             if (person is null)
             {
-                return new BadRequestObjectResult("Id is incorrect");
+                return new BadRequestResult();
             }
 
             _ = _dbContext.People.Remove(person);
             _ = await _dbContext.SaveChangesAsync();
 
             return new PersonDTO { Name = person.Name, Surname = person.Surname };
-        }
-
-        [HttpGet("ShowEverything")]
-        public async Task<ActionResult<IEnumerable<PersonModel>>> GetAllInfo()
-        {
-            var peopleList = await _dbContext.People.Include(model => model.AssignesParkingSpaces).ToListAsync();
-
-            return peopleList;
         }
     }
 }
