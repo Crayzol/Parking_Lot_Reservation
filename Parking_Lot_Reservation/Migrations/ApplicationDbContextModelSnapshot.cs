@@ -17,7 +17,7 @@ namespace Parking_Lot_Reservation.Migrations
 
             modelBuilder.Entity("Parking_Lot_Reservation.Models.ParkingSpaceModel", b =>
                 {
-                    b.Property<int>("ParkingSpaceId")
+                    b.Property<int>("ParkingId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -30,7 +30,7 @@ namespace Parking_Lot_Reservation.Migrations
                     b.Property<int>("PersonId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("ParkingSpaceId");
+                    b.HasKey("ParkingId");
 
                     b.HasIndex("PersonId");
 
@@ -57,7 +57,7 @@ namespace Parking_Lot_Reservation.Migrations
             modelBuilder.Entity("Parking_Lot_Reservation.Models.ParkingSpaceModel", b =>
                 {
                     b.HasOne("Parking_Lot_Reservation.Models.PersonModel", "PersonModel")
-                        .WithMany("ParkingSpaceModels")
+                        .WithMany("AssignesParkingSpaces")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -67,7 +67,7 @@ namespace Parking_Lot_Reservation.Migrations
 
             modelBuilder.Entity("Parking_Lot_Reservation.Models.PersonModel", b =>
                 {
-                    b.Navigation("ParkingSpaceModels");
+                    b.Navigation("AssignesParkingSpaces");
                 });
 #pragma warning restore 612, 618
         }
