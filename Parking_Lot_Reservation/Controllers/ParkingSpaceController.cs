@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Parking_Lot_Reservation.Data;
 using Parking_Lot_Reservation.DTOs;
 using Parking_Lot_Reservation.Models;
@@ -28,7 +29,7 @@ namespace Parking_Lot_Reservation.Controllers
             var parkingSpaceAdd = new ParkingSpaceModel
             {
                 IsReserved = parkingSpaceDTO.IsReserved,
-                HasCharger = parkingSpaceDTO.HasCharger,
+                HasCharger = parkingSpaceDTO.HasCharger
             };
 
             if (ModelState.IsValid)

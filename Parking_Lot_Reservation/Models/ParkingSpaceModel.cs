@@ -12,12 +12,12 @@ namespace Parking_Lot_Reservation.Models
     {
         [Key]
         public int ParkingId { get; set; }
-        public int PersonId { get; set; }
+        public int? PersonId { get; set; }
         public bool IsReserved { get; set; }
         public bool HasCharger { get; set; }
         
         [JsonIgnore]
         [ForeignKey("PersonId")]
-        public virtual PersonModel PersonModel { get; set; }
+        public virtual PersonModel? PersonModel { get; set; }
     }
 }

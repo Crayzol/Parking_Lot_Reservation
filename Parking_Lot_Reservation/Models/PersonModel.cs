@@ -13,6 +13,6 @@ namespace Parking_Lot_Reservation.Models
         public int PersonId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public virtual ICollection<ParkingSpaceModel> AssignesParkingSpaces { get; set; }
+        public virtual ICollection<ParkingSpaceModel>? AssignesParkingSpaces { get; set; }
     }
 }

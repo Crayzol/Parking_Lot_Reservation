@@ -11,6 +11,6 @@ namespace Parking_Lot_Reservation.DTOs
         public int PersonId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public ICollection<ParkingSpaceModel> ParkingSpaceModels { get; set; }
+        public ICollection<ParkingSpaceModel>? ParkingSpaceModels { get; set; }
     }
 }

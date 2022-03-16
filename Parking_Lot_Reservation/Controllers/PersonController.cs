@@ -32,7 +32,8 @@ namespace Parking_Lot_Reservation.Controllers
             var personAdd = new PersonModel
             {
                 Name = personDTO.Name,
-                Surname = personDTO.Surname
+                Surname = personDTO.Surname,
+                AssignesParkingSpaces = personDTO.ParkingSpaceModels
             };
 
             _ = await _dbContext.People.AddAsync(personAdd);
@@ -73,7 +74,7 @@ namespace Parking_Lot_Reservation.Controllers
         }
 
         [HttpGet("ShowEverything")]
-        public async Task<ActionResult<IEnumerable<PersonModel>>> GetAllInfo()
+        public async Task<ActionResult<IEnumerable<PersonModel>>> GetAllInformations()
         {
             var peopleList = await _dbContext.People.Include(model => model.AssignesParkingSpaces).ToListAsync();
 
